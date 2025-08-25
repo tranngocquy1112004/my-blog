@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import PostItem from './PostItem';
 import Loading from './Loading';
 import Pagination from './Pagination';
+import '../style/PostList.css';
 
 function PostList() {
   const [posts, setPosts] = useState([]);
@@ -45,19 +46,14 @@ function PostList() {
   return (
     <div>
       {/* Display current posts */}
-      <div style={{ marginBottom: '20px' }}>
+      <div className="posts-container">
         {currentPosts.map(post => (
           <PostItem key={post.id} post={post} />
         ))}
       </div>
 
       {/* Pagination info */}
-      <div style={{
-        textAlign: 'center',
-        marginBottom: '10px',
-        color: '#666',
-        fontSize: '14px'
-      }}>
+      <div className="pagination-info">
         Showing {indexOfFirstPost + 1} to {Math.min(indexOfLastPost, posts.length)} of {posts.length} posts
       </div>
 

@@ -1,19 +1,10 @@
 import PostList from '../components/PostList';
+import '../style/Blog.css';
 
 function Blog() {
   return (
-    <div style={{
-      maxWidth: '1200px',
-      margin: '0 auto',
-      padding: '20px'
-    }}>
-      <h1 style={{
-        textAlign: 'center',
-        color: '#333',
-        marginBottom: '30px',
-        fontSize: '2.5rem',
-        fontWeight: 'bold'
-      }}>
+    <div className="blog-container">
+      <h1 className="blog-title">
         Blog Posts
       </h1>
       <PostList />

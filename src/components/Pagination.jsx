@@ -1,4 +1,5 @@
 import React from 'react';
+import '../style/Pagination.css';
 
 function Pagination({ currentPage, totalPages, onPageChange }) {
   const pageNumbers = [];
@@ -9,25 +10,12 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
   }
 
   return (
-    <div className="pagination" style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      gap: '10px',
-      margin: '20px 0',
-      padding: '20px'
-    }}>
+    <div className="pagination">
       {/* Previous button */}
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        style={{
-          padding: '8px 16px',
-          border: '1px solid #ddd',
-          backgroundColor: currentPage === 1 ? '#f5f5f5' : '#fff',
-          cursor: currentPage === 1 ? 'not-allowed' : 'pointer',
-          borderRadius: '4px'
-        }}
+        className="pagination-button"
       >
         Previous
       </button>
@@ -37,15 +25,7 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
         <button
           key={number}
           onClick={() => onPageChange(number)}
-          style={{
-            padding: '8px 12px',
-            border: '1px solid #ddd',
-            backgroundColor: currentPage === number ? '#007bff' : '#fff',
-            color: currentPage === number ? '#fff' : '#333',
-            cursor: 'pointer',
-            borderRadius: '4px',
-            minWidth: '40px'
-          }}
+          className={`page-number ${currentPage === number ? 'active' : ''}`}
         >
           {number}
         </button>
@@ -55,13 +35,7 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        style={{
-          padding: '8px 16px',
-          border: '1px solid #ddd',
-          backgroundColor: currentPage === totalPages ? '#f5f5f5' : '#fff',
-          cursor: currentPage === totalPages ? 'not-allowed' : 'pointer',
-          borderRadius: '4px'
-        }}
+        className="pagination-button"
       >
         Next
       </button>

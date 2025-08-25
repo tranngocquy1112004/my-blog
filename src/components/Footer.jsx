@@ -1,7 +1,11 @@
+import '../style/Footer.css';
+
 function Footer() {
     return (
-      <footer>
-        <p>&copy; 2025 My Simple Blog. Powered by JSON API.</p>
+      <footer className="footer">
+        <div className="footer-content">
+          <p>&copy; 2025 Quy's Blog.</p>
+        </div>
       </footer>
     );
   }

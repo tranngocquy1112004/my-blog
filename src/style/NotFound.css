@@ -1,0 +1,29 @@
+.not-found-container {
+  max-width: 600px;
+  margin: 100px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.not-found-title {
+  color: #333;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.not-found-message {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.back-home-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.back-home-link:hover {
+  text-decoration: underline;
+}

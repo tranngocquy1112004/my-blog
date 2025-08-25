@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Loading from './Loading';
+import '../style/PostDetail.css';
 
 function PostDetail() {
   const { id } = useParams();
@@ -27,12 +28,12 @@ function PostDetail() {
   }, [id]);
 
   if (loading) return <Loading />;
-  if (!post) return <div>Post not found</div>;
+  if (!post) return <div className="post-not-found">Post not found</div>;
 
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
+    <div className="post-detail-container">
+      <h1 className="post-detail-title">{post.title}</h1>
+      <p className="post-detail-content">{post.body}</p>
     </div>
   );
 }

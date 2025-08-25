@@ -6,6 +6,7 @@ import Blog from './pages/Blog';
 import NotFound from './pages/NotFound';
 import PostDetail from './components/PostDetail';
 import About from './components/About';
+import './style/index.css';
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<PostDetail />} />
           <Route path="/about" element={<About />} />
+          <Route path="/blog/:id" element={<PostDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
